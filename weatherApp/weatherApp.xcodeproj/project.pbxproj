@@ -20,6 +20,8 @@
 		3A536C03234FC4FC00D8DC39 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536C02234FC4FC00D8DC39 /* AppError.swift */; };
 		3A536C05234FC51400D8DC39 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536C04234FC51400D8DC39 /* ImageHelper.swift */; };
 		3A536C07234FC69800D8DC39 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536C06234FC69800D8DC39 /* ForecastCell.swift */; };
+		3A536C09234FCDDD00D8DC39 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536C08234FCDDC00D8DC39 /* Weather.swift */; };
+		3A536C0B234FCE4900D8DC39 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536C0A234FCE4900D8DC39 /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		3A536C02234FC4FC00D8DC39 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		3A536C04234FC51400D8DC39 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		3A536C06234FC69800D8DC39 /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
+		3A536C08234FCDDC00D8DC39 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		3A536C0A234FCE4900D8DC39 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,8 @@
 		3A536BFE234FC4AA00D8DC39 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3A536C0A234FCE4900D8DC39 /* Secrets.swift */,
+				3A536C08234FCDDC00D8DC39 /* Weather.swift */,
 				3A536BFC234FC46D00D8DC39 /* ZipCodeHelper.swift */,
 			);
 			path = Models;
@@ -291,9 +297,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A536BFD234FC46D00D8DC39 /* ZipCodeHelper.swift in Sources */,
+				3A536C0B234FCE4900D8DC39 /* Secrets.swift in Sources */,
 				3A536BC0234E662400D8DC39 /* ViewController.swift in Sources */,
 				3A536C03234FC4FC00D8DC39 /* AppError.swift in Sources */,
 				3A536C01234FC4D200D8DC39 /* NetworkManager.swift in Sources */,
+				3A536C09234FCDDD00D8DC39 /* Weather.swift in Sources */,
 				3A536C07234FC69800D8DC39 /* ForecastCell.swift in Sources */,
 				3A536BBC234E662400D8DC39 /* AppDelegate.swift in Sources */,
 				3A536BBE234E662400D8DC39 /* SceneDelegate.swift in Sources */,
