@@ -29,9 +29,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = forecastCollection.dequeueReusableCell(withReuseIdentifier: "forecastCell", for: indexPath)
+        return cell
     }
     
+
     
 }
 
