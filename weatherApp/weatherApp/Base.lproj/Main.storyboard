@@ -97,6 +97,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="jfq-dS-Eby"/>
                     <connections>
+                        <outlet property="cityLabel" destination="IPk-S4-92V" id="sYG-nr-KAH"/>
                         <outlet property="forecastCollection" destination="dwD-Ia-SlE" id="S7R-7a-9h2"/>
                     </connections>
                 </viewController>

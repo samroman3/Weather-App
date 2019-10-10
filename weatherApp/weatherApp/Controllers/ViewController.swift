@@ -12,9 +12,12 @@ class ViewController: UIViewController {
     
     var forecast: Weather? {
         didSet {
+            cityLabel.text = forecast?.timezone.replacingOccurrences(of: "_", with: " ")
             forecastCollection.reloadData()
         }
     }
+    
+    @IBOutlet weak var cityLabel: UILabel!
     
     @IBOutlet weak var forecastCollection: UICollectionView!
     
@@ -68,5 +71,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
 }
 
-
+extension ViewController: UITextFieldDelegate {
+    
+}
 
