@@ -19,16 +19,16 @@ struct Weather: Codable {
     let flags: Flags
     let offset: Int
     
-    static func getForecastFromData(data: Data) throws ->  [Weather] {
-        var forecast = [Weather]()
+    static func getForecastFromData(data: Data) throws ->  Weather {
+        var forecast: Weather?
         do {
-            let info = try JSONDecoder().decode([Weather].self, from: data)
+            let info = try JSONDecoder().decode(Weather.self, from: data)
             forecast = info
             
         } catch {
             print(error)
         }
-        return forecast
+        return forecast!
     }
     
 }

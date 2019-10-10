@@ -28,21 +28,21 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="forecastCell" id="Zf4-yA-QSc" customClass="ForecastCell" customModule="weatherApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="39" width="270" height="262"/>
+                                        <rect key="frame" x="0.0" y="35" width="270" height="270"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rDO-QH-a0c">
-                                            <rect key="frame" x="0.0" y="0.0" width="270" height="262"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="270" height="270"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQz-XM-3Uv">
-                                                    <rect key="frame" x="105" y="204" width="36" height="21"/>
+                                                    <rect key="frame" x="35" y="204" width="186" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Low" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2c6-a2-2Mm">
-                                                    <rect key="frame" x="108" y="233" width="31" height="21"/>
+                                                    <rect key="frame" x="35" y="233" width="186" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -61,7 +61,7 @@
                                                 </label>
                                             </subviews>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="270" height="262"/>
+                                        <size key="customSize" width="270" height="270"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="vXu-sW-GMN" id="UkP-sk-AYD"/>
                                             <outlet property="highLabel" destination="hQz-XM-3Uv" id="hPD-IP-a9c"/>
@@ -110,6 +110,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wQh-li-GxJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zod-0x-5w5">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
