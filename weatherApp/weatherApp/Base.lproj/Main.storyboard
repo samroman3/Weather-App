@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--7 Day Forecast-->
+        <!--Weather-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="weatherApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -95,7 +95,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="7 Day Forecast" selectedImage="cloud.sun" catalog="system" id="jfq-dS-Eby"/>
+                    <tabBarItem key="tabBarItem" title="Weather" image="cloud.heavyrain" catalog="system" selectedImage="cloud.drizzle" id="jfq-dS-Eby">
+                        <color key="badgeColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="cityLabel" destination="IPk-S4-92V" id="sYG-nr-KAH"/>
                         <outlet property="enterZIpLabel" destination="1ED-qb-Nns" id="Gpa-Sr-tCU"/>
@@ -127,6 +129,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cloud.sun" catalog="system" width="64" height="44"/>
+        <image name="cloud.drizzle" catalog="system" width="64" height="62"/>
+        <image name="cloud.heavyrain" catalog="system" width="64" height="62"/>
     </resources>
 </document>
