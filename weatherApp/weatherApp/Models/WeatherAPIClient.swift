@@ -26,7 +26,7 @@ struct WeatherAPIClient {
                 
                 do {
                 let forecast = try Weather.getForecastFromData(data: data)
-                    completionHandler(.success(forecast))
+                    completionHandler(.success(forecast!))
                 }
                 catch {
                     completionHandler(.failure(.other(rawError: error)))

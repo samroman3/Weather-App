@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     var forecast: Weather? {
         didSet {
-            cityLabel.text = forecast?.timezone.replacingOccurrences(of: "_", with: " ")
+            cityLabel.text = forecast?.timezone?.replacingOccurrences(of: "_", with: " ")
             forecastCollection.reloadData()
         }
     }
@@ -50,12 +50,12 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return forecast?.daily.data.count ?? 1
+        return forecast?.daily?.data?.count ?? 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = forecastCollection.dequeueReusableCell(withReuseIdentifier: "forecastCell", for: indexPath) as? ForecastCell else { return UICollectionViewCell()}
-        let weather = forecast?.daily.data[indexPath.row]
+        let weather = forecast?.daily?.data?[indexPath.row]
 //        cell.dateLabel.text = weather.currently.time
         cell.highLabel.text = "High: \( weather?.apparentTemperatureHigh ?? 0.0)"
         cell.lowLabel.text = "Low: \(weather?.apparentTemperatureLow ?? 0.0)"
