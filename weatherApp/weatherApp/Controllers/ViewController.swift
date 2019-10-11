@@ -17,12 +17,8 @@ class ViewController: UIViewController {
         }
     }
     
-//    var searchLatLong: String? {
-//        didSet {
-//            loadForecast(str: searchLatLong!)
-//
-//        }
-//    }
+
+    @IBOutlet weak var enterZIpLabel: UILabel!
     
     
     @IBOutlet weak var zipField: UITextField!
@@ -34,7 +30,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         forecastCollection.delegate = self
         forecastCollection.dataSource = self
-        loadForecast(str:"37.8267,-122.4233")
+        loadForecast(lat: 37.8267, long: -122.4233)
         zipField.delegate = self
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -42,8 +38,8 @@ class ViewController: UIViewController {
 
     
     
-    private func loadForecast(str: String){
-        WeatherAPIClient.shared.getWeatherFrom(searchWord: str) { (result) in
+    private func loadForecast(lat: Double, long: Double){
+        WeatherAPIClient.shared.getWeatherFrom(lat: lat, long: long) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .failure(let error):
@@ -51,6 +47,23 @@ class ViewController: UIViewController {
                     print("its me")
                 case .success(let data):
                     self.forecast = data
+                }
+            }
+        }
+    }
+    
+    private func loadData(zip: String){
+        ZipCodeHelper.getLatLong(fromZipCode: zip) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                    self.enterZIpLabel.text = "Invalid ZIP, Try Again:"
+                case .success(let lat, let long):
+                    self.loadForecast(lat: lat, long: long)
+                    self.enterZIpLabel.text = "Enter Zipcode:"
+                    
+                   
                 }
             }
         }
@@ -85,36 +98,16 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 extension ViewController: UITextFieldDelegate {
     
     
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        var result = false
-//        if zipField.text?.count == 5 {
-//            ZipCodeHelper.getLatLong(fromZipCode: zipField.text ?? "") { (result) in
-//                DispatchQueue.main.async {
-//                switch result {
-//                case .failure(let error):
-//                    print(error)
-//                case .success(let lat, let long):
-//                    let str = "\(lat),\(long)"
-//                    WeatherAPIClient.shared.getWeatherFrom(searchWord: str) { (result) in
-//                        DispatchQueue.main.async {
-//                            switch result {
-//                            case .failure(let error):
-//                                print(error)
-//                            case .success(let data):
-//                                self.forecast = data
-//                            }
-//                        }
-//
-//                    }
-//                    }
-//                }
-//            }
-//        result = true
-//        } else {
-//        result = false
-//        }
-//      return result
-//    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if zipField.text?.count == 5 {
+            zipField.resignFirstResponder()
+            loadData(zip: zipField.text ?? "10940")
+            
+        return true
+        } else {
+        return false
+        }
+}
 
 }
 

@@ -12,8 +12,8 @@ struct WeatherAPIClient {
     private init() {}
     static let shared = WeatherAPIClient()
     
-    func getWeatherFrom(searchWord: String, completionHandler: @escaping (Result<Weather, AppError>) -> ()) {
-        let urlStr = "https://api.darksky.net/forecast/fc6747fc3f155dcec711ad5f69cea503/\(searchWord)"
+    func getWeatherFrom(lat: Double, long: Double, completionHandler: @escaping (Result<Weather, AppError>) -> ()) {
+        let urlStr = "https://api.darksky.net/forecast/\(Secrets.api_key)/\(lat),\(long)"
         guard let url = URL(string: urlStr) else {
             completionHandler(.failure(AppError.badURL))
             return

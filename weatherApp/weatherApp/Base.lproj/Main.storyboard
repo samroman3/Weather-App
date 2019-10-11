@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--7 Day Forecast-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="weatherApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,7 +78,7 @@
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="postal-code"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Zipcode:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ED-qb-Nns">
-                                <rect key="frame" x="153" y="524" width="113" height="21"/>
+                                <rect key="frame" x="64" y="524" width="290" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -95,9 +95,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="jfq-dS-Eby"/>
+                    <tabBarItem key="tabBarItem" title="7 Day Forecast" selectedImage="cloud.sun" catalog="system" id="jfq-dS-Eby"/>
                     <connections>
                         <outlet property="cityLabel" destination="IPk-S4-92V" id="sYG-nr-KAH"/>
+                        <outlet property="enterZIpLabel" destination="1ED-qb-Nns" id="Gpa-Sr-tCU"/>
                         <outlet property="forecastCollection" destination="dwD-Ia-SlE" id="S7R-7a-9h2"/>
                         <outlet property="zipField" destination="sk6-Ep-ppu" id="KTm-0t-a8u"/>
                     </connections>
@@ -125,4 +126,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cloud.sun" catalog="system" width="64" height="44"/>
+    </resources>
 </document>
