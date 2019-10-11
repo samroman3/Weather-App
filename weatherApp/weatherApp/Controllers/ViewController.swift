@@ -17,6 +17,16 @@ class ViewController: UIViewController {
         }
     }
     
+//    var searchLatLong: String? {
+//        didSet {
+//            loadForecast(str: searchLatLong!)
+//
+//        }
+//    }
+    
+    
+    @IBOutlet weak var zipField: UITextField!
+    
     @IBOutlet weak var cityLabel: UILabel!
     
     @IBOutlet weak var forecastCollection: UICollectionView!
@@ -24,15 +34,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         forecastCollection.delegate = self
         forecastCollection.dataSource = self
-        loadForecast()
+        loadForecast(str:"37.8267,-122.4233")
+        zipField.delegate = self
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
     
     
-    private func loadForecast(){
-        WeatherAPIClient.shared.getWeatherFrom(searchWord: "") { (result) in
+    private func loadForecast(str: String){
+        WeatherAPIClient.shared.getWeatherFrom(searchWord: str) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .failure(let error):
@@ -50,7 +61,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return forecast?.daily?.data?.count ?? 1
+        return forecast?.daily?.data?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -73,5 +84,37 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 
 extension ViewController: UITextFieldDelegate {
     
+    
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        var result = false
+//        if zipField.text?.count == 5 {
+//            ZipCodeHelper.getLatLong(fromZipCode: zipField.text ?? "") { (result) in
+//                DispatchQueue.main.async {
+//                switch result {
+//                case .failure(let error):
+//                    print(error)
+//                case .success(let lat, let long):
+//                    let str = "\(lat),\(long)"
+//                    WeatherAPIClient.shared.getWeatherFrom(searchWord: str) { (result) in
+//                        DispatchQueue.main.async {
+//                            switch result {
+//                            case .failure(let error):
+//                                print(error)
+//                            case .success(let data):
+//                                self.forecast = data
+//                            }
+//                        }
+//
+//                    }
+//                    }
+//                }
+//            }
+//        result = true
+//        } else {
+//        result = false
+//        }
+//      return result
+//    }
+
 }
 
