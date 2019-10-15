@@ -23,7 +23,7 @@ class ForecastDetailVC: UIViewController {
     
     lazy var highLabel: UILabel = {
     let label = UILabel()
-        label.text = "High: "
+        label.text = "High: \(weather.apparentTemperatureHigh ?? 0) "
         label.textColor = .white
         label.textAlignment = .center
         label.font = label.font.withSize(17)
@@ -32,7 +32,7 @@ class ForecastDetailVC: UIViewController {
     
     lazy var lowLabel: UILabel = {
     let label = UILabel()
-        label.text = "Low: "
+        label.text = "Low: \(weather.apparentTemperatureLow ?? 0) "
         label.textColor = .white
         label.textAlignment = .center
         label.font = label.font.withSize(17)
@@ -41,7 +41,7 @@ class ForecastDetailVC: UIViewController {
     
     lazy var sunsetLabel: UILabel = {
     let label = UILabel()
-        label.text = "Sunset: "
+        label.text = "Sunset: \(weather.sunsetTime ?? 0)"
         label.textColor = .white
         label.textAlignment = .center
         label.font = label.font.withSize(17)
@@ -50,7 +50,7 @@ class ForecastDetailVC: UIViewController {
     
     lazy var sunriseLabel: UILabel = {
     let label = UILabel()
-        label.text = "Sunrise: "
+        label.text = "Sunrise: \(weather.sunriseTime ?? 0) "
         label.textColor = .white
         label.textAlignment = .center
         label.font = label.font.withSize(17)
@@ -65,7 +65,7 @@ class ForecastDetailVC: UIViewController {
     
     lazy var windSpeedLabel: UILabel = {
     let label = UILabel()
-        label.text = "Windspeed: "
+        label.text = "Windspeed: \(weather.windSpeed ?? 0) "
         label.textColor = .white
         label.textAlignment = .center
         label.font = label.font.withSize(17)
@@ -74,7 +74,7 @@ class ForecastDetailVC: UIViewController {
     
     lazy var precipLabel: UILabel = {
     let label = UILabel()
-        label.text = "Level of precipitation: "
+        label.text = "Chance of precipitation: \(weather.precipProbability ?? 0)%"
         label.textColor = .white
         label.textAlignment = .center
         label.font = label.font.withSize(17)
@@ -114,7 +114,7 @@ class ForecastDetailVC: UIViewController {
         NSLayoutConstraint.activate([
             infoStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             infoStack.centerYAnchor.constraint(equalTo:self.view.centerYAnchor, constant: 100),
-            infoStack.heightAnchor.constraint(equalToConstant: CGFloat(150)),
+            infoStack.heightAnchor.constraint(equalToConstant: CGFloat(180)),
             infoStack.widthAnchor.constraint(equalTo: self.view.widthAnchor, constant: 0)
         ])
     }
@@ -163,8 +163,7 @@ class ForecastDetailVC: UIViewController {
         addSubviews()
         setConstraints()
         self.view.backgroundColor = UIColor(red: 0.31, green: 0.33, blue: 0.36, alpha: 1)
-      
-        super.viewDidLoad()
+      super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
