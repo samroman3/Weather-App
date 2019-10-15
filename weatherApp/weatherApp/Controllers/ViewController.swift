@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         }
     }
     
+    var recentZIP = ""
+    
     @IBOutlet weak var enterZIpLabel: UILabel!
     
     
