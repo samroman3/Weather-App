@@ -99,6 +99,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         cell.lowLabel.text = "Low: \(weather?.apparentTemperatureLow ?? 0.0)"
         cell.summaryLabel.text = weather?.summary
         cell.dateLabel.text = "\(weather?.time ?? 3)"
+        cell.imageWeather.image = UIImage(named: "\(weather?.icon! ?? "")")
         return cell
     }
     
