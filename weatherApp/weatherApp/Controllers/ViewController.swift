@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //MARK: Variables & Outlets
+    
     var forecast: Weather? {
         didSet {
             cityLabel.text = forecast?.timezone?.replacingOccurrences(of: "_", with: " ")
@@ -17,7 +19,6 @@ class ViewController: UIViewController {
         }
     }
     
-
     @IBOutlet weak var enterZIpLabel: UILabel!
     
     
@@ -26,6 +27,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     
     @IBOutlet weak var forecastCollection: UICollectionView!
+    
+    //MARK: Lifecycle Methods
     
     override func viewDidLoad() {
         forecastCollection.delegate = self
@@ -37,6 +40,7 @@ class ViewController: UIViewController {
     }
 
     
+    //MARK: Private Data Methods
     
     private func loadForecast(lat: Double, long: Double){
         WeatherAPIClient.shared.getWeatherFrom(lat: lat, long: long) { (result) in
@@ -72,6 +76,9 @@ class ViewController: UIViewController {
 }
 
 
+
+    //MARK: CollectionView Extension
+
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return forecast?.daily?.data?.count ?? 0
@@ -94,8 +101,18 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 340, height: 330)
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let weather = forecast?.daily?.data?[indexPath.row]
+        let detailVC = ForecastDetailVC()
+        
+        
+    }
 }
 
+
+    //MARK: TextField Extension
 extension ViewController: UITextFieldDelegate {
     
     

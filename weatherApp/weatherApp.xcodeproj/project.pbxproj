@@ -24,6 +24,7 @@
 		3A536C0B234FCE4900D8DC39 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536C0A234FCE4900D8DC39 /* Secrets.swift */; };
 		3A536C0E234FD14300D8DC39 /* WeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536C0D234FD14300D8DC39 /* WeatherAPIClient.swift */; };
 		3A536C10234FD5E600D8DC39 /* weatherTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A536C0F234FD5E600D8DC39 /* weatherTest.json */; };
+		3A536CC6235560EA00D8DC39 /* ForecastDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536CC5235560EA00D8DC39 /* ForecastDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		3A536C0A234FCE4900D8DC39 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		3A536C0D234FD14300D8DC39 /* WeatherAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIClient.swift; sourceTree = "<group>"; };
 		3A536C0F234FD5E600D8DC39 /* weatherTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weatherTest.json; sourceTree = SOURCE_ROOT; };
+		3A536CC5235560EA00D8DC39 /* ForecastDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				3A536BBF234E662400D8DC39 /* ViewController.swift */,
+				3A536CC5235560EA00D8DC39 /* ForecastDetailVC.swift */,
 				3A536C06234FC69800D8DC39 /* ForecastCell.swift */,
 			);
 			path = Controllers;
@@ -315,6 +318,7 @@
 				3A536C0B234FCE4900D8DC39 /* Secrets.swift in Sources */,
 				3A536BC0234E662400D8DC39 /* ViewController.swift in Sources */,
 				3A536C03234FC4FC00D8DC39 /* AppError.swift in Sources */,
+				3A536CC6235560EA00D8DC39 /* ForecastDetailVC.swift in Sources */,
 				3A536C01234FC4D200D8DC39 /* NetworkManager.swift in Sources */,
 				3A536C09234FCDDD00D8DC39 /* Weather.swift in Sources */,
 				3A536C07234FC69800D8DC39 /* ForecastCell.swift in Sources */,
