@@ -104,7 +104,7 @@ class ForecastDetailVC: UIViewController {
     
     lazy var saveButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Save To Favorites", for: .normal)
+        button.setTitle("Save Photo To Favorites", for: .normal)
         button.setTitleColor(.link, for: .normal)
         button.tintColor = .white
         button.backgroundColor = UIColor(white: 1, alpha: 0.98)

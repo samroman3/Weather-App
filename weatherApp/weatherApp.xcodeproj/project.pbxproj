@@ -29,6 +29,7 @@
 		3A536CCB23562EE500D8DC39 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536CCA23562EE500D8DC39 /* FavoritesTableViewCell.swift */; };
 		3A536CCD2356312800D8DC39 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536CCC2356312800D8DC39 /* Photos.swift */; };
 		3A536CCF2356313E00D8DC39 /* PhotosAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536CCE2356313E00D8DC39 /* PhotosAPIClient.swift */; };
+		3A536CD12356518400D8DC39 /* FavPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536CD02356518400D8DC39 /* FavPhotos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		3A536CCA23562EE500D8DC39 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		3A536CCC2356312800D8DC39 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		3A536CCE2356313E00D8DC39 /* PhotosAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAPIClient.swift; sourceTree = "<group>"; };
+		3A536CD02356518400D8DC39 /* FavPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavPhotos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				3A536BBF234E662400D8DC39 /* ViewController.swift */,
 				3A536CC5235560EA00D8DC39 /* ForecastDetailVC.swift */,
 				3A536CC723562D5700D8DC39 /* FavoritesViewController.swift */,
+				3A536CD02356518400D8DC39 /* FavPhotos.swift */,
 				3A536CCA23562EE500D8DC39 /* FavoritesTableViewCell.swift */,
 				3A536C06234FC69800D8DC39 /* ForecastCell.swift */,
 			);
@@ -338,6 +341,7 @@
 				3A536BFD234FC46D00D8DC39 /* ZipCodeHelper.swift in Sources */,
 				3A536C0B234FCE4900D8DC39 /* Secrets.swift in Sources */,
 				3A536CCD2356312800D8DC39 /* Photos.swift in Sources */,
+				3A536CD12356518400D8DC39 /* FavPhotos.swift in Sources */,
 				3A536BC0234E662400D8DC39 /* ViewController.swift in Sources */,
 				3A536C03234FC4FC00D8DC39 /* AppError.swift in Sources */,
 				3A536CCF2356313E00D8DC39 /* PhotosAPIClient.swift in Sources */,
