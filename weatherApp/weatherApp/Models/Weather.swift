@@ -36,6 +36,7 @@ struct Daily: Codable {
 
 // MARK: - DailyDatum
 struct DailyDatum: Codable {
+    
     let summary: String?
     let sunriseTime, sunsetTime: Int?
     let moonPhase, precipIntensity, precipIntensityMax: Double?
