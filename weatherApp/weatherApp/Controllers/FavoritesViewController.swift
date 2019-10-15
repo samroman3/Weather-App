@@ -73,10 +73,47 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         let fav = favs[indexPath.row]
         cell.cityLabel.text = fav.name
         cell.cityImage.image = UIImage(data: fav.image)
+        cell.delegate = self as! FavDelegate
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 280
     }
+}
+
+
+    //MARK: Actionsheet Delegate
+
+extension FavoritesViewController: FavDelegate {
+func showActionSheet(tag: Int) {
+let optionsMenu = UIAlertController.init(title: "Options", message: "Make Selection", preferredStyle: .actionSheet)
+
+let shareAction = UIAlertAction.init(title: "Share", style: .default) { (action) in
+    let image = UIImage(data: self.favs[tag].image)
+
+    let share = UIActivityViewController(activityItems: [image!], applicationActivities: [])
+    self.present(share, animated: true, completion: nil)
+}
+
+let deleteAction = UIAlertAction.init(title: "Delete", style: .destructive) { (action) in
+let pic = self.favs[tag]
+print("deleting \(pic.name)")
+do {
+    try PhotoPersistenceHelper.manager.delete(picArray: self.favs, index: tag)
+    self.loadFavs()
+} catch {
+    return
+}
+}
+
+let cancelAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
+optionsMenu.addAction(shareAction)
+optionsMenu.addAction(deleteAction)
+optionsMenu.addAction(cancelAction)
+present(optionsMenu,animated: true,completion: nil)
+
+
+}
+
 }

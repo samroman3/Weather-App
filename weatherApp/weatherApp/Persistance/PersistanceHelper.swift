@@ -26,18 +26,11 @@ struct PersistenceHelper<T: Codable> {
     
     func save(newElement: T) throws {
         var elements = try getObjects()
-        elements.insert(newElement, at: 0)
+        elements.append(newElement)
         let serializedData = try PropertyListEncoder().encode(elements)
         try serializedData.write(to: url, options: Data.WritingOptions.atomic)
     }
     
-    func editAtIndex(editedElement: T, index: Int) throws {
-    var elements = try getObjects()
-    elements[index] = editedElement
-    let serializedData = try PropertyListEncoder().encode(elements)
-    try serializedData.write(to: url, options: Data.WritingOptions.atomic)
-    }
-
     
     init(fileName: String){
         self.fileName = fileName

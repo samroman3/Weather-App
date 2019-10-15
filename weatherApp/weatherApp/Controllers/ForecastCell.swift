@@ -10,6 +10,7 @@ import UIKit
 
 class ForecastCell: UICollectionViewCell {
     
+
     
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -21,6 +22,7 @@ class ForecastCell: UICollectionViewCell {
     
     @IBOutlet weak var lowLabel: UILabel!
     
+
     
     
 }

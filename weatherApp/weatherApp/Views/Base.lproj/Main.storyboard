@@ -180,6 +180,9 @@
                                                     <state key="normal">
                                                         <color key="titleShadowColor" red="0.1333345175" green="0.13333117959999999" blue="0.13333344459999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="optionAction:" destination="qD5-nF-BNr" eventType="touchUpInside" id="nfO-5B-DhV"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.1333345175" green="0.13333117959999999" blue="0.13333344459999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -187,7 +190,6 @@
                                         <connections>
                                             <outlet property="cityImage" destination="09Q-cp-mYS" id="Ux0-it-Xp8"/>
                                             <outlet property="cityLabel" destination="SOD-HE-Vd5" id="7uB-YL-Tij"/>
-                                            <outlet property="optionsButton" destination="UNv-EW-6Ft" id="NIX-c0-xCY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

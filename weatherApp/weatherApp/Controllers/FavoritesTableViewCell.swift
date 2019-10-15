@@ -9,14 +9,17 @@
 import UIKit
 
 class FavoritesTableViewCell: UITableViewCell {
+    
+    weak var delegate: FavDelegate?
 
     @IBOutlet weak var cityLabel: UILabel!
     
     @IBOutlet weak var cityImage: UIImageView!
     
-    @IBOutlet weak var optionsButton: UIButton!
     
-    
+    @IBAction func optionAction(_ sender: UIButton) {
+        delegate?.showActionSheet(tag: sender.tag)
+    }
     
     
     override func awakeFromNib() {
