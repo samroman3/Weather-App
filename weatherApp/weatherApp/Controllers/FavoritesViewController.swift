@@ -22,6 +22,16 @@ class FavoritesViewController: UIViewController {
     
     
     
+    private func deleteObject(arr: [FavPhotos], index: Int){
+           do {
+               try PhotoPersistenceHelper.manager.delete(picArray: arr, index: index)
+               loadFavs()
+           } catch {
+               print("unable to delete")
+           }
+       }
+
+    
     private func loadFavs(){
         do {
             let favArray = try PhotoPersistenceHelper.manager.getPhoto()

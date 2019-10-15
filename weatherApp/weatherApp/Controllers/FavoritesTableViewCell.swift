@@ -14,6 +14,10 @@ class FavoritesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cityImage: UIImageView!
     
+    @IBOutlet weak var optionsButton: UIButton!
+    
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

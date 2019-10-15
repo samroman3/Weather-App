@@ -45,6 +45,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    
 
     
     //MARK: Private Data Methods
@@ -55,9 +57,9 @@ class ViewController: UIViewController {
                 switch result {
                 case .failure(let error):
                     print(error)
-                    print("its me")
                 case .success(let data):
                     self.forecast = data
+                    self.cityLabel.text = self.forecast?.fixedName
                 }
             }
         }
@@ -79,7 +81,8 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
+   
 }
 
 

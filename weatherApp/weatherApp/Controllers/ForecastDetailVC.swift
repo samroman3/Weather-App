@@ -166,14 +166,30 @@ class ForecastDetailVC: UIViewController {
         let image = weatherIcon.image?.pngData()
         let fav = FavPhotos(image: image!, name: cityLabel.text!)
         do {
-            try PhotoPersistenceHelper.manager.save(newPhoto: fav)
-            dismiss(animated: true, completion: nil)
-        } catch {
-            return
-        }
-        
-        
+               try PhotoPersistenceHelper.manager.save(newPhoto: fav)
+               dismiss(animated: true, completion: nil)
+           } catch {
+           return
+       }
     }
+//
+//        do {
+//           current = try PhotoPersistenceHelper.manager.getPhoto()
+//        } catch {
+//            return
+//        }
+        
+//        for i in current {
+//            if i.name == fav.name {
+//                let alert = UIAlertController(title: "Sorry!", message: "Already Added To Favorites", preferredStyle: .alert)
+//                let alertAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
+//                alert.addAction(alertAction)
+//                present(alert, animated: true)
+//                added = true
+//        }
+            
+    
+
     
     
     

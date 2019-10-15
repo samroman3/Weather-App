@@ -173,12 +173,21 @@
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" red="0.1333345175" green="0.13333117959999999" blue="0.13333344459999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNv-EW-6Ft">
+                                                    <rect key="frame" x="378" y="11" width="25" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal">
+                                                        <color key="titleShadowColor" red="0.1333345175" green="0.13333117959999999" blue="0.13333344459999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.1333345175" green="0.13333117959999999" blue="0.13333344459999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cityImage" destination="09Q-cp-mYS" id="Ux0-it-Xp8"/>
                                             <outlet property="cityLabel" destination="SOD-HE-Vd5" id="7uB-YL-Tij"/>
+                                            <outlet property="optionsButton" destination="UNv-EW-6Ft" id="NIX-c0-xCY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

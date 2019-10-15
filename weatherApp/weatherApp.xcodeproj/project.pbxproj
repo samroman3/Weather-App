@@ -33,6 +33,7 @@
 		3A536CD4235652AD00D8DC39 /* PersistanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536CD3235652AD00D8DC39 /* PersistanceHelper.swift */; };
 		3A536CD6235652CB00D8DC39 /* PhotoPersistanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536CD5235652CB00D8DC39 /* PhotoPersistanceHelper.swift */; };
 		3A536CD8235652DC00D8DC39 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536CD7235652DC00D8DC39 /* UserDefaultsWrapper.swift */; };
+		3A536CDA2356640100D8DC39 /* FavDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536CD92356640100D8DC39 /* FavDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		3A536CD3235652AD00D8DC39 /* PersistanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceHelper.swift; sourceTree = "<group>"; };
 		3A536CD5235652CB00D8DC39 /* PhotoPersistanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPersistanceHelper.swift; sourceTree = "<group>"; };
 		3A536CD7235652DC00D8DC39 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		3A536CD92356640100D8DC39 /* FavDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				3A536CCC2356312800D8DC39 /* Photos.swift */,
 				3A536CCE2356313E00D8DC39 /* PhotosAPIClient.swift */,
 				3A536BFC234FC46D00D8DC39 /* ZipCodeHelper.swift */,
+				3A536CD92356640100D8DC39 /* FavDelegate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				3A536CCD2356312800D8DC39 /* Photos.swift in Sources */,
 				3A536CD12356518400D8DC39 /* FavPhotos.swift in Sources */,
 				3A536CD4235652AD00D8DC39 /* PersistanceHelper.swift in Sources */,
+				3A536CDA2356640100D8DC39 /* FavDelegate.swift in Sources */,
 				3A536BC0234E662400D8DC39 /* ViewController.swift in Sources */,
 				3A536C03234FC4FC00D8DC39 /* AppError.swift in Sources */,
 				3A536CCF2356313E00D8DC39 /* PhotosAPIClient.swift in Sources */,
