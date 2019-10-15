@@ -19,6 +19,8 @@ struct Photos: Codable {
     
      try JSONDecoder().decode(Photos.self, from: data)
 }
+    
+}
 
 // MARK: - Hit
 struct Hit: Codable {
@@ -48,4 +50,4 @@ enum TypeEnum: String, Codable {
     case photo = "photo"
 }
     
-}
+
