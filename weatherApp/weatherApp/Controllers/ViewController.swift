@@ -14,12 +14,20 @@ class ViewController: UIViewController {
     
     var forecast: Weather? {
         didSet {
-            cityLabel.text = forecast?.fixedName
             forecastCollection.reloadData()
         }
     }
     
-    var recentZIP = ""
+    var recentZIP = "" {
+        didSet {
+            UserDefaultsWrapper.wrapper.storeZip(zipCode: self.recentZIP)
+        }
+    }
+    
+    var lat: Double = 37.8267
+    
+    var long: Double = -122.4233
+    
     
     @IBOutlet weak var enterZIpLabel: UILabel!
     
@@ -40,7 +48,7 @@ class ViewController: UIViewController {
         setNeedsStatusBarAppearanceUpdate()
         forecastCollection.delegate = self
         forecastCollection.dataSource = self
-        loadForecast(lat: 37.8267, long: -122.4233)
+        loadForecast(lat: lat, long: long)
         zipField.delegate = self
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -51,6 +59,13 @@ class ViewController: UIViewController {
     
     //MARK: Private Data Methods
     
+    
+    private func loadZip(){
+       let recent = UserDefaultsWrapper.wrapper.getZip()
+        if recent != nil {
+            recentZIP = "10940"
+        }
+    }
     private func loadForecast(lat: Double, long: Double){
         WeatherAPIClient.shared.getWeatherFrom(lat: lat, long: long) { (result) in
             DispatchQueue.main.async {
@@ -73,6 +88,8 @@ class ViewController: UIViewController {
                     print(error)
                     self.enterZIpLabel.text = "Invalid ZIP, Try Again:"
                 case .success(let lat, let long):
+                    self.lat = lat
+                    self.long = long
                     self.loadForecast(lat: lat, long: long)
                     self.enterZIpLabel.text = "Enter Zipcode:"
                     
@@ -97,11 +114,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = forecastCollection.dequeueReusableCell(withReuseIdentifier: "forecastCell", for: indexPath) as? ForecastCell else { return UICollectionViewCell()}
         let weather = forecast?.daily?.data?[indexPath.row]
-//        cell.dateLabel.text = weather.currently.time
         cell.highLabel.text = "High: \( weather?.apparentTemperatureHigh ?? 0.0)"
         cell.lowLabel.text = "Low: \(weather?.apparentTemperatureLow ?? 0.0)"
         cell.summaryLabel.text = weather?.summary
-        cell.dateLabel.text = "\(weather?.time ?? 3)"
+        cell.dateLabel.text = weather?.getDateFromTime(time: weather?.time ?? 0)
         cell.imageWeather.image = UIImage(named: "\(weather?.icon! ?? "")")
         return cell
     }
@@ -137,7 +153,7 @@ extension ViewController: UITextFieldDelegate {
         if zipField.text?.count == 5 {
             zipField.resignFirstResponder()
             loadData(zip: zipField.text ?? "10940")
-            
+            recentZIP = zipField.text!
         return true
         } else {
         return false

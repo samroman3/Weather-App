@@ -15,7 +15,6 @@ struct PhotoAPIClient {
     func getPhotos(search: String, completionHandler: @escaping (Result<Photos, AppError>) -> ()) {
         let name = search.replacingOccurrences(of: " ", with: "+").lowercased()
         let urlStr = "https://pixabay.com/api/?key=\(Secrets.pix_key)&q=\(name)&image_type=photo&pretty=true"
-//        let urlStr = "https://pixabay.com/api/?key=13951722-70ec27a49b8dad8d3243dc6fa&q=los+angeles&image_type=photo&pretty=true"
         guard let url = URL(string: urlStr) else {
             completionHandler(.failure(AppError.badURL))
             return

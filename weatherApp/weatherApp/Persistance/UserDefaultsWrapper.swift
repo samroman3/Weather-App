@@ -16,30 +16,21 @@ class UserDefaultsWrapper {
 
     // MARK: - getters
     
-//    func getDarkModeSetting() -> Bool? {
-//        return UserDefaults.standard.value(forKey: "DarkMode") as? Bool
-//    }
-//
-    
-//    func getScrollDirection() -> Bool? {
-//        return UserDefaults.standard.value(forKey: "Scroll") as? Bool
-//    }
+    func getZip() -> String? {
+        return UserDefaults.standard.value(forKey: "zipCode") as? String
+    }
+
 
 
     
     // MARK: - setters
-//
-//    func storeMode(darkMode: Bool) {
-//        UserDefaults.standard.set(darkMode, forKey: "DarkMode")
-//    }
-//
-//    func storeScroll(scrollDirection: Bool) {
-//        UserDefaults.standard.set(scrollDirection, forKey: "Scroll")
-//    }
-   
+
+    func storeZip(zipCode: String) {
+        UserDefaults.standard.set(zipCode, forKey: "zipCode")
+    }
 
 
-    // MARK: - private keyNames
+
     
    
 }
