@@ -106,6 +106,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let weather = forecast?.daily?.data?[indexPath.row]
         let detailVC = ForecastDetailVC()
+        detailVC.cityLabel.text = forecast?.fixedName
+        self.modalPresentationStyle = .overCurrentContext
+        present(detailVC, animated: true, completion: nil)
+        
         
         
     }

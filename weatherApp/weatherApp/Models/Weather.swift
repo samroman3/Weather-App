@@ -9,6 +9,9 @@ import Foundation
 struct Weather: Codable {
     let timezone: String?
     let daily: Daily?
+    var fixedName: String? {
+        timezone?.replacingOccurrences(of: "_", with: " ")
+    }
     
     
     static func getForecastFromData(data: Data) throws -> Weather? {
