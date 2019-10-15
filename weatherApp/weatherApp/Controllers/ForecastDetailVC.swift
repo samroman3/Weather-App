@@ -163,7 +163,16 @@ class ForecastDetailVC: UIViewController {
     
     
     @objc func saveButtonPressed(sender: UIButton){
-        dismiss(animated: true, completion: nil)
+        let image = weatherIcon.image?.pngData()
+        let fav = FavPhotos(image: image!, name: cityLabel.text!)
+        do {
+            try PhotoPersistenceHelper.manager.save(newPhoto: fav)
+            dismiss(animated: true, completion: nil)
+        } catch {
+            return
+        }
+        
+        
     }
     
     
