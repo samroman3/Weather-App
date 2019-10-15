@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     var forecast: Weather? {
         didSet {
-            cityLabel.text = forecast?.timezone?.replacingOccurrences(of: "_", with: " ")
+            cityLabel.text = forecast?.fixedName
             forecastCollection.reloadData()
         }
     }

@@ -10,7 +10,10 @@ struct Weather: Codable {
     let timezone: String?
     let daily: Daily?
     var fixedName: String? {
-        timezone?.replacingOccurrences(of: "_", with: " ")
+        let split = timezone?.components(separatedBy: "/")
+        guard split?[1] != nil else { return ""}
+        let city = split?[1].replacingOccurrences(of: "_", with: " ")
+        return city
     }
     
     
