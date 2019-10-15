@@ -8,51 +8,38 @@
 
 import Foundation
 
-struct PersistenceHelper<T: Codable> {
+class UserDefaultsWrapper {
+
+    // MARK: - singleton
     
-    func getObjects() throws -> [T] {
-        guard let data = FileManager.default.contents(atPath: url.path) else {
-            return []
-        }
-        return try PropertyListDecoder().decode([T].self, from: data)
-    }
+    static let wrapper = UserDefaultsWrapper()
+
+    // MARK: - getters
     
+//    func getDarkModeSetting() -> Bool? {
+//        return UserDefaults.standard.value(forKey: "DarkMode") as? Bool
+//    }
+//
     
-    func deleteAtIndex(newArray: [T], index: Int) throws {
-        var elements = try getObjects()
-        elements.remove(at: index)
-        let serializedData = try PropertyListEncoder().encode(elements)
-        try serializedData.write(to: url, options: Data.WritingOptions.atomic)
-        }
-    
-    func save(newElement: T) throws {
-        var elements = try getObjects()
-        elements.append(newElement)
-        let serializedData = try PropertyListEncoder().encode(elements)
-        try serializedData.write(to: url, options: Data.WritingOptions.atomic)
-    }
-    
-    func editAtIndex(editedElement: T, index: Int) throws {
-    var elements = try getObjects()
-    elements[index] = editedElement
-    let serializedData = try PropertyListEncoder().encode(elements)
-    try serializedData.write(to: url, options: Data.WritingOptions.atomic)
-    }
+//    func getScrollDirection() -> Bool? {
+//        return UserDefaults.standard.value(forKey: "Scroll") as? Bool
+//    }
+
 
     
-    init(fileName: String){
-        self.fileName = fileName
-    }
-    
-    private let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    // MARK: - setters
+//
+//    func storeMode(darkMode: Bool) {
+//        UserDefaults.standard.set(darkMode, forKey: "DarkMode")
+//    }
+//
+//    func storeScroll(scrollDirection: Bool) {
+//        UserDefaults.standard.set(scrollDirection, forKey: "Scroll")
+//    }
+   
 
-    private func filePathFromDocumentsDirectory(name: String) -> URL {
-        return documentsDirectory.appendingPathComponent(name)
-    }
+
+    // MARK: - private keyNames
     
-    private let fileName: String
-    
-    private var url: URL {
-        return filePathFromDocumentsDirectory(name: fileName)
-    }
+   
 }
