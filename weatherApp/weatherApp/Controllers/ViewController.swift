@@ -90,7 +90,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 //        cell.dateLabel.text = weather.currently.time
         cell.highLabel.text = "High: \( weather?.apparentTemperatureHigh ?? 0.0)"
         cell.lowLabel.text = "Low: \(weather?.apparentTemperatureLow ?? 0.0)"
-        cell.dateLabel.text = weather?.summary
+        cell.summaryLabel.text = weather?.summary
+        cell.dateLabel.text = "\(weather?.time ?? 3)"
         return cell
     }
     
@@ -99,7 +100,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 340, height: 330)
+        return CGSize(width: 406, height: 395)
     }
     
     

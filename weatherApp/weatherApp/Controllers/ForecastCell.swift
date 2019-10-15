@@ -13,6 +13,8 @@ class ForecastCell: UICollectionViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     
+    @IBOutlet weak var summaryLabel: UILabel!
+    
     @IBOutlet weak var imageWeather: UIImageView!
     
     @IBOutlet weak var highLabel: UILabel!
