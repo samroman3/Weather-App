@@ -107,6 +107,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let weather = forecast?.daily?.data?[indexPath.row]
         let detailVC = ForecastDetailVC()
         detailVC.cityLabel.text = forecast?.fixedName
+        detailVC.weather = weather
         self.modalPresentationStyle = .overCurrentContext
         present(detailVC, animated: true, completion: nil)
         

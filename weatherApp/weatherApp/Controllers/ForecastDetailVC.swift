@@ -21,6 +21,76 @@ class ForecastDetailVC: UIViewController {
         return label
     }()
     
+    lazy var highLabel: UILabel = {
+    let label = UILabel()
+        label.text = "High: "
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = label.font.withSize(14)
+        return label
+    }()
+    
+    lazy var lowLabel: UILabel = {
+    let label = UILabel()
+        label.text = "Low: "
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = label.font.withSize(14)
+        return label
+    }()
+    
+    lazy var sunsetLabel: UILabel = {
+    let label = UILabel()
+        label.text = "Sunset: "
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = label.font.withSize(14)
+        return label
+    }()
+    
+    lazy var sunriseLabel: UILabel = {
+    let label = UILabel()
+        label.text = "Sunrise: "
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = label.font.withSize(14)
+        return label
+    }()
+    
+    lazy var weatherIcon: UIImageView = {
+      let icon = UIImageView()
+        icon.backgroundColor = .lightGray
+        icon.image = (UIImage(named: ""))
+        return icon
+    }()
+    
+    lazy var windSpeedLabel: UILabel = {
+    let label = UILabel()
+        label.text = "Windspeed: "
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = label.font.withSize(14)
+        return label
+    }()
+    
+    lazy var precipLabel: UILabel = {
+    let label = UILabel()
+        label.text = "Level of precipitation: "
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = label.font.withSize(14)
+        return label
+    }()
+    
+    lazy var infoStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews:[highLabel, lowLabel, sunriseLabel, sunsetLabel, precipLabel])
+        stack.alignment = .center
+        stack.axis = .vertical
+        stack.spacing = CGFloat(9)
+        stack.distribution = .fillProportionally
+        return stack
+    }()
+    
     lazy var backButton: UIButton = {
         let button = UIButton()
         button.setTitle("Back", for: .normal)
@@ -39,6 +109,16 @@ class ForecastDetailVC: UIViewController {
         ])
     }
     
+    private func constrainStack(){
+        infoStack.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            infoStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            infoStack.centerYAnchor.constraint(equalTo:self.view.centerYAnchor, constant: 100),
+            infoStack.heightAnchor.constraint(equalToConstant: CGFloat(100)),
+            infoStack.widthAnchor.constraint(equalTo: self.view.widthAnchor, constant: 0)
+        ])
+    }
+    
     private func constrainBackButton(){
         backButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -52,31 +132,25 @@ class ForecastDetailVC: UIViewController {
     private func addSubviews(){
         view.addSubview(cityLabel)
         view.addSubview(backButton)
+        view.addSubview(infoStack)
     }
     
     private func setConstraints(){
         constrainCityNameLabel()
         constrainBackButton()
+        constrainStack()
     }
 
     override func viewDidLoad() {
         addSubviews()
         setConstraints()
         self.view.backgroundColor = UIColor(red: 0, green: 0.3, blue: 0.6, alpha: 0.99)
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
