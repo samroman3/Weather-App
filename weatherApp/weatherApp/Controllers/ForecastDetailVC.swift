@@ -220,8 +220,16 @@ class ForecastDetailVC: UIViewController {
         constrainIcon()
         constrainSaveButton()
     }
+    
+    
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     override func viewDidLoad() {
+        setNeedsStatusBarAppearanceUpdate()
         addSubviews()
         setConstraints()
         self.view.backgroundColor = UIColor(red: 0.31, green: 0.33, blue: 0.36, alpha: 1)

@@ -31,10 +31,15 @@ class FavoritesViewController: UIViewController {
         }
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         favTableView.delegate = self
         favTableView.dataSource = self
         loadFavs()
+        setNeedsStatusBarAppearanceUpdate()
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

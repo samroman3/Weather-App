@@ -32,7 +32,12 @@ class ViewController: UIViewController {
     
     //MARK: Lifecycle Methods
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
+        setNeedsStatusBarAppearanceUpdate()
         forecastCollection.delegate = self
         forecastCollection.dataSource = self
         loadForecast(lat: 37.8267, long: -122.4233)

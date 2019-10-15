@@ -38,6 +38,7 @@ struct Weather: Codable {
 struct Daily: Codable {
     let summary: String?
     let data: [DailyDatum]?
+    
 }
 
 // MARK: - DailyDatum
