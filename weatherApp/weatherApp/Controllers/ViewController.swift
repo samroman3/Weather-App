@@ -18,9 +18,6 @@ class ViewController: UIViewController {
         }
     }
     
-    var lat: Double = 37.8267
-    
-    var long: Double = -122.4233
     
     
     @IBOutlet weak var enterZIpLabel: UILabel!

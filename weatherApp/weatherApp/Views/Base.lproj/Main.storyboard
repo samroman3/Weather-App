@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iQR-wH-TWq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iQR-wH-TWq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,10 +16,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dwD-Ia-SlE">
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex: 10940" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sk6-Ep-ppu">
+                                <rect key="frame" x="119" y="664" width="181" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="one-time-code"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPk-S4-92V">
+                                <rect key="frame" x="64" y="67" width="290" height="83"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter Zipcode:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ED-qb-Nns">
+                                <rect key="frame" x="62" y="611" width="290" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000000000000004" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dwD-Ia-SlE">
                                 <rect key="frame" x="0.0" y="158" width="414" height="429"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="429" id="0VX-d5-kV2"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CtN-ah-7Mh">
                                     <size key="itemSize" width="406" height="395"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -103,28 +122,22 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex: 10940" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sk6-Ep-ppu">
-                                <rect key="frame" x="119" y="664" width="181" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="postal-code"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPk-S4-92V">
-                                <rect key="frame" x="64" y="67" width="290" height="83"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Zipcode:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ED-qb-Nns">
-                                <rect key="frame" x="62" y="611" width="290" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dwD-Ia-SlE" firstAttribute="top" secondItem="IPk-S4-92V" secondAttribute="bottom" constant="8" id="Bgi-1u-XwC"/>
+                            <constraint firstItem="IPk-S4-92V" firstAttribute="centerX" secondItem="sk6-Ep-ppu" secondAttribute="centerX" id="BrK-i7-8Zu"/>
+                            <constraint firstItem="IPk-S4-92V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="JiU-jR-olh"/>
+                            <constraint firstItem="1ED-qb-Nns" firstAttribute="top" secondItem="dwD-Ia-SlE" secondAttribute="bottom" constant="24" id="LKl-hY-Y0f"/>
+                            <constraint firstItem="IPk-S4-92V" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="bgC-LI-5g0"/>
+                            <constraint firstItem="dwD-Ia-SlE" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-56" id="deZ-DB-FBi"/>
+                            <constraint firstItem="sk6-Ep-ppu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="2.5" id="fRg-ea-49h"/>
+                            <constraint firstItem="dwD-Ia-SlE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="l2G-NN-NKx"/>
+                            <constraint firstItem="dwD-Ia-SlE" firstAttribute="centerX" secondItem="1ED-qb-Nns" secondAttribute="centerX" id="pcd-Qr-MPW"/>
+                            <constraint firstItem="dwD-Ia-SlE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="sgv-qh-Xas"/>
+                            <constraint firstItem="sk6-Ep-ppu" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="252.5" id="tEZ-PO-JEQ"/>
+                            <constraint firstItem="sk6-Ep-ppu" firstAttribute="top" secondItem="1ED-qb-Nns" secondAttribute="bottom" constant="32" id="vAM-RI-yPU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Forecast" image="cloud.sun" catalog="system" selectedImage="cloud.sun" id="Iv3-wY-G8J"/>
@@ -161,21 +174,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="279"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="09Q-cp-mYS">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="09Q-cp-mYS">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="279"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOD-HE-Vd5">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOD-HE-Vd5">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="279"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" red="0.1333345175" green="0.13333117959999999" blue="0.13333344459999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNv-EW-6Ft">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNv-EW-6Ft">
                                                     <rect key="frame" x="378" y="11" width="25" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal">
                                                         <color key="titleShadowColor" red="0.1333345175" green="0.13333117959999999" blue="0.13333344459999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -186,6 +196,18 @@
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.1333345175" green="0.13333117959999999" blue="0.13333344459999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstItem="09Q-cp-mYS" firstAttribute="centerY" secondItem="GIb-Jt-DRJ" secondAttribute="centerY" id="1OG-2q-kqD"/>
+                                                <constraint firstItem="09Q-cp-mYS" firstAttribute="leading" secondItem="GIb-Jt-DRJ" secondAttribute="leadingMargin" constant="-20" id="3Qb-l0-PgR"/>
+                                                <constraint firstItem="UNv-EW-6Ft" firstAttribute="centerY" secondItem="GIb-Jt-DRJ" secondAttribute="centerY" constant="-116.5" id="And-0Q-bwm"/>
+                                                <constraint firstItem="SOD-HE-Vd5" firstAttribute="centerY" secondItem="GIb-Jt-DRJ" secondAttribute="centerY" id="CdS-L1-6yV"/>
+                                                <constraint firstItem="09Q-cp-mYS" firstAttribute="centerX" secondItem="GIb-Jt-DRJ" secondAttribute="centerX" id="Ebb-4O-BDw"/>
+                                                <constraint firstItem="09Q-cp-mYS" firstAttribute="top" secondItem="GIb-Jt-DRJ" secondAttribute="topMargin" constant="-11" id="INo-Hg-HAR"/>
+                                                <constraint firstItem="SOD-HE-Vd5" firstAttribute="centerX" secondItem="GIb-Jt-DRJ" secondAttribute="centerX" id="LHr-KE-2eA"/>
+                                                <constraint firstItem="09Q-cp-mYS" firstAttribute="leading" secondItem="SOD-HE-Vd5" secondAttribute="leading" id="PnN-UG-EBp"/>
+                                                <constraint firstItem="09Q-cp-mYS" firstAttribute="top" secondItem="SOD-HE-Vd5" secondAttribute="top" id="pR6-aT-2lS"/>
+                                                <constraint firstItem="UNv-EW-6Ft" firstAttribute="centerX" secondItem="GIb-Jt-DRJ" secondAttribute="centerX" constant="183.5" id="uKT-y9-bpa"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cityImage" destination="09Q-cp-mYS" id="Ux0-it-Xp8"/>
@@ -200,6 +222,8 @@
                             <constraint firstItem="pzV-ZB-aig" firstAttribute="trailing" secondItem="TZ9-4S-cnx" secondAttribute="trailing" id="3IY-zB-ZFI"/>
                             <constraint firstItem="TZ9-4S-cnx" firstAttribute="top" secondItem="pzV-ZB-aig" secondAttribute="top" id="A71-QJ-iMA"/>
                             <constraint firstItem="pzV-ZB-aig" firstAttribute="bottom" secondItem="TZ9-4S-cnx" secondAttribute="bottom" id="Cba-yd-5ck"/>
+                            <constraint firstItem="TZ9-4S-cnx" firstAttribute="centerX" secondItem="pzV-ZB-aig" secondAttribute="centerX" id="Ka9-H5-nW6"/>
+                            <constraint firstItem="TZ9-4S-cnx" firstAttribute="centerY" secondItem="pzV-ZB-aig" secondAttribute="centerY" id="Nah-xA-2pu"/>
                             <constraint firstItem="TZ9-4S-cnx" firstAttribute="leading" secondItem="pzV-ZB-aig" secondAttribute="leading" id="cyI-eF-hbo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pzV-ZB-aig"/>
@@ -235,6 +259,6 @@
     </scenes>
     <resources>
         <image name="cloud.sun" catalog="system" width="64" height="44"/>
-        <image name="heart.circle" catalog="system" width="64" height="62"/>
+        <image name="heart.circle" catalog="system" width="64" height="60"/>
     </resources>
 </document>
