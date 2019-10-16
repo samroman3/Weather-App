@@ -17,7 +17,7 @@ class UserDefaultsWrapper {
     // MARK: - getters
     
     func getZip() -> String? {
-        return UserDefaults.standard.value(forKey: "zipCode") as? String
+        return UserDefaults.standard.value(forKey: "zipCode") as? String ?? "10940"
     }
 
 

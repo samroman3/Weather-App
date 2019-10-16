@@ -18,12 +18,6 @@ class ViewController: UIViewController {
         }
     }
     
-    var recentZIP = "" {
-        didSet {
-            UserDefaultsWrapper.wrapper.storeZip(zipCode: self.recentZIP)
-        }
-    }
-    
     var lat: Double = 37.8267
     
     var long: Double = -122.4233
@@ -48,24 +42,15 @@ class ViewController: UIViewController {
         setNeedsStatusBarAppearanceUpdate()
         forecastCollection.delegate = self
         forecastCollection.dataSource = self
-        loadForecast(lat: lat, long: long)
         zipField.delegate = self
+        zipField.text = UserDefaultsWrapper.wrapper.getZip()!
+        loadData(zip: zipField.text!)
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
-    
-
-    
     //MARK: Private Data Methods
-    
-    
-    private func loadZip(){
-       let recent = UserDefaultsWrapper.wrapper.getZip()
-        if recent != nil {
-            recentZIP = "10940"
-        }
-    }
+
     private func loadForecast(lat: Double, long: Double){
         WeatherAPIClient.shared.getWeatherFrom(lat: lat, long: long) { (result) in
             DispatchQueue.main.async {
@@ -88,8 +73,6 @@ class ViewController: UIViewController {
                     print(error)
                     self.enterZIpLabel.text = "Invalid ZIP, Try Again:"
                 case .success(let lat, let long):
-                    self.lat = lat
-                    self.long = long
                     self.loadForecast(lat: lat, long: long)
                     self.enterZIpLabel.text = "Enter Zipcode:"
                     
@@ -101,8 +84,6 @@ class ViewController: UIViewController {
     
    
 }
-
-
 
     //MARK: CollectionView Extension
 
@@ -138,27 +119,26 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         detailVC.weather = weather
         self.modalPresentationStyle = .overCurrentContext
         present(detailVC, animated: true, completion: nil)
-        
-        
-        
-    }
+        }
+    
 }
 
 
     //MARK: TextField Extension
 extension ViewController: UITextFieldDelegate {
     
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if zipField.text?.count == 5 {
             zipField.resignFirstResponder()
             loadData(zip: zipField.text ?? "10940")
-            recentZIP = zipField.text!
+            UserDefaultsWrapper.wrapper.storeZip(zipCode: zipField.text!)
         return true
         } else {
         return false
         }
 }
+    
+    
 
 }
 
