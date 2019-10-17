@@ -11,6 +11,8 @@ import UIKit
 class FavoritesViewController: UIViewController {
     
     
+    //MARK: Variables & Outlets
+    
     var favs = [FavPhotos]()
     {
         didSet {
@@ -22,6 +24,8 @@ class FavoritesViewController: UIViewController {
     
     
     
+    
+    //MARK: Private Methods
     private func deleteObject(arr: [FavPhotos], index: Int){
            do {
                try PhotoPersistenceHelper.manager.delete(index: index)
@@ -41,6 +45,9 @@ class FavoritesViewController: UIViewController {
         }
     }
     
+    
+    
+    //MARK: Lifecycle Methods
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -61,6 +68,9 @@ class FavoritesViewController: UIViewController {
     
 }
 
+
+
+    //MARK: Tableview Extension
 
 extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
    

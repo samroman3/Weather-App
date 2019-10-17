@@ -10,6 +10,8 @@ import UIKit
 
 class ForecastDetailVC: UIViewController {
     
+    //MARK: Variables & Labels
+    
     var photo = "not working"
     
     var weather: DailyDatum!
@@ -84,6 +86,9 @@ class ForecastDetailVC: UIViewController {
         return label
     }()
     
+    
+    //MARK: StackView 
+    
     lazy var infoStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews:[cityLabel, highLabel, lowLabel, sunriseLabel, sunsetLabel, precipLabel])
         stack.alignment = .center
@@ -93,6 +98,8 @@ class ForecastDetailVC: UIViewController {
         return stack
     }()
     
+    
+    //MARK: Button Outlets
     lazy var backButton: UIButton = {
         let button = UIButton()
         button.setTitle("Back", for: .normal)
@@ -113,6 +120,8 @@ class ForecastDetailVC: UIViewController {
         return button
     }()
 
+    
+    //MARK: Constraint Methods
     
     private func constrainStack(){
         infoStack.translatesAutoresizingMaskIntoConstraints = false
@@ -172,26 +181,7 @@ class ForecastDetailVC: UIViewController {
            return
        }
     }
-//
-//        do {
-//           current = try PhotoPersistenceHelper.manager.getPhoto()
-//        } catch {
-//            return
-//        }
-        
-//        for i in current {
-//            if i.name == fav.name {
-//                let alert = UIAlertController(title: "Sorry!", message: "Already Added To Favorites", preferredStyle: .alert)
-//                let alertAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
-//                alert.addAction(alertAction)
-//                present(alert, animated: true)
-//                added = true
-//        }
-            
-    
 
-    
-    
     
     //MARK: Private Methods
     
@@ -239,6 +229,9 @@ class ForecastDetailVC: UIViewController {
     
     
     
+    
+    
+    //MARK: Lifecycle Methods
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
